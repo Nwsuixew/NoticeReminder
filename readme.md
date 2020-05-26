@@ -30,6 +30,12 @@
 python3.8 manage.py -init
 ```
 
+- 运行脚本
+
+```
+python3.8 manage.py -run
+```
+
 - 向数据库添加用户
 
 ```
