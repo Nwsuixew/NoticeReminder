@@ -19,7 +19,7 @@
 
 ## 启动前配置
 
-- 用于发送邮件的邮箱账号及密码，详见 >NoticeReminder.ini<
+- 用于发送邮件的邮箱账号及密码，详见 NoticeReminder.ini
 
 ## 使用教程
 
@@ -62,7 +62,7 @@ SID       Email               jwc comm
 python3.8 usermanage.py -u (学号) (邮箱 | 网站) (新邮箱 | 订阅)
 
 示例：
-更改邮箱：python3.8 usermanage.py -u 12345678 newuser@qq.com
+更改邮箱：python3.8 usermanage.py -u 12345678 email newuser@qq.com
 更改订阅：python3.8 usermanage.py -u 12345678 jwc 0
 ```
 
