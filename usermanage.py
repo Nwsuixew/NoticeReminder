@@ -7,29 +7,6 @@ import re
 import db
 
 
-def init():
-    config = configparser.ConfigParser()
-    config.read('NoticeReminder.ini', 'utf-8')
-    db_name = config['Database']['DatabaseName']
-    user_table_name = config['Database']['UserTableName']
-
-    db.create_db(db_name)
-    if not db.is_table_exist(db_name, user_table_name):
-        db.create_table(db_name, user_table_name, 'sid text, email text')
-
-    for name in config['Database']['DepartmentTableNames'].split(','):
-        if not db.is_column_exist(db_name, user_table_name, name):
-            db.insert_column(db_name, user_table_name, name + ' int')
-
-
-def get_all_user():
-    config = configparser.ConfigParser()
-    config.read('NoticeReminder.ini', 'utf-8')
-
-    return db.fetch_row_all(config['Database']['DatabaseName'], config['Database']['UserTableName'],
-                            ', '.join(config['Database']['DepartmentTableNames'].split(',')) + ', email')
-
-
 def is_sid_correct(sid: str):
     """
     检查学号是否正确（格式检查）
