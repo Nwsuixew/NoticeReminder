@@ -31,7 +31,7 @@ def main():
             updated[i] = 1
 
     if sum(updated) > 0:    # “检测到新通知”标志位之和大于0 -> 检测到新通知
-        user_list = db.fetch_row_all(config['Database']['DatabaseName'], config['Database']['UserTableName'],
+        user_list = db.fetch_row_all(config['Database']['UserDatebaseName'], config['Database']['UserTableName'],
                                      ', '.join(department_table_names) + ', email')   # 拉取全部用户(没考虑用户表很大的情况)
 
         for user in user_list:
